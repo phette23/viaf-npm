@@ -1,8 +1,8 @@
 {
   "name": "viaf",
   "version": "0.0.1",
-  "description": "Wrapper around OCLC's VIAF API",
-  "main": "index.js",
+  "description": "Wrapper around the VIAF API",
+  "main": "viaf.js",
   "scripts": {
     "test": "nodeunit test"
   },
