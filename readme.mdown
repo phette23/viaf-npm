@@ -2,6 +2,8 @@
 
 Wrapper around the VIAF API for Node.
 
+BETA - there's a lot of work to be done, I'm just getting this out here for now.
+
 ## Install
 
 ```
