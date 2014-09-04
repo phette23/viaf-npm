@@ -1,0 +1,36 @@
+{
+  "name": "viaf",
+  "version": "0.0.1",
+  "description": "Wrapper around OCLC's VIAF API",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodeunit test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phette23/viaf-npm"
+  },
+  "keywords": [
+    "viaf",
+    "metadata",
+    "authority",
+    "control",
+    "OCLC",
+    "international"
+  ],
+  "author": "phette23 <phette23@gmail.com> (http://phette.net/)",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/phette23/viaf-npm/issues"
+  },
+  "homepage": "https://github.com/phette23/viaf-npm",
+  "dependencies": {
+    "request": "^2.36.0"
+  },
+  "optionalDependencies": {
+    "pretty-data": "^0.40.0"
+  },
+  "devDependencies": {
+    "nodeunit": "^0.9.0"
+  }
+}

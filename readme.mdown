@@ -1,0 +1,35 @@
+# VIAF NPM
+
+Wrapper around the VIAF API for Node.
+
+## Install
+
+```
+npm i viaf
+```
+
+## Use
+
+```js
+var viaf = require('viaf');
+
+viaf.autosuggest(query, callback);
+viaf.read(id, callback);
+viaf.search(query, callback);
+```
+
+## Examples
+
+This is not meant to do much other than conveniently request & return data from VIAF, so among the tasks it won't perform: parse this data, provide an autocomplete widget, or provide a synchronous wrapper for operations. Look in the "example" folder to see how this package might be used to accomplish something actually useful.
+
+## See Also
+
+- [VIAF in OCLC API Explorer](https://platform.worldcat.org/api-explorer/VIAF/)
+
+## To Do
+
+- [ ] more detail in this here readme
+- [ ] tests
+- [ ] make CLI
+- [ ] AuthoritySource API
+- [ ] examples for all methods
