@@ -11,7 +11,7 @@ dns.resolve('viaf.org', function (err) {
 })
 
 exports['Successful HTTP Request & Response'] = function (test) {
-    viaf.search('test search', function (err, resp, body) {
+    viaf.autosuggest('test search', function (err, resp, body) {
         test.strictEqual(err, null)
         test.equal(resp.statusCode, 200)
         test.ok(body)
