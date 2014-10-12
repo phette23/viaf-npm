@@ -5,6 +5,6 @@ var viaf = require('../viaf')
     , pd = require('pretty-data').pd
     , id = process.argv[2] || "102333412";
 
-viaf.read('102333412', function (err, resp, xml) {
+viaf.read(id, function (err, resp, xml) {
     process.stdout.write(pd.xml(xml));
 });
