@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/phette23/viaf-npm",
   "dependencies": {
-    "request": "^2.36.0"
+    "request": "^2.45.0"
   },
   "optionalDependencies": {
     "pretty-data": "^0.40.0"
