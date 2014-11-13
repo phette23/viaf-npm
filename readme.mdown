@@ -1,5 +1,7 @@
 # VIAF NPM
 
+<a href="https://travis-ci.org/phette23/viaf-npm">![]("https://img.shields.io/travis/phette23/viaf-npm.svg?style=flat-square")</a>
+
 Wrapper around the VIAF API for Node.
 
 ## Install
