@@ -38,14 +38,6 @@ This is not meant to do much other than conveniently request & return data from 
 
 Internally, this module uses [request](https://github.com/mikeal/request) to call the VIAF API. You can pass options directly to request by overriding the `viaf.requestOptions` object, which is passed directly to request.
 
-## To Do
-
-- [ ] more detail in this here readme
-- [ ] tests
-- [ ] make CLI
-- [ ] AuthoritySource API
-- [ ] examples for all methods
-
 ## License
 
 CC0 Public Domain

@@ -95,7 +95,4 @@ viaf.autosuggest = function (query, cb) {
     return viaf.request(url + encodeURIComponent(query), cb || null);
 };
 
-// @todo AuthoritySource read
-// @todo viaf.translate(lccn, getty, etc.) => returns VIAF ID (or full record?)
-
 module.exports = viaf;
