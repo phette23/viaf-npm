@@ -12,13 +12,18 @@ npm i viaf
 
 ## Use
 
+See the "example" directory.
+
 ```js
 var viaf = require('viaf');
 
 viaf.autosuggest(query, callback);
 viaf.read(id, callback);
+viaf.read(id, dataType, callback);
 viaf.search(query, callback);
 ```
+
+The callback is passed three parameters in this order: any error that occurs, an HTTP response object, and the body (text) of the response. The `read` method's default dataType is XML and its valid types are: html, xml, json (just returns a list of links to other authorities), rdf, json-ld, rss, marc21, marcxml, marchtml, unimarcxml, unimarchtml.
 
 ## Examples
 
@@ -27,6 +32,11 @@ This is not meant to do much other than conveniently request & return data from 
 ## See Also
 
 - [VIAF in OCLC API Explorer](https://platform.worldcat.org/api-explorer/VIAF/)
+- [Authority Cluster Resource](https://www.oclc.org/developer/develop/web-services/viaf/authority-cluster.en.html)
+
+## More Details
+
+Internally, this module uses [request](https://github.com/mikeal/request) to call the VIAF API. You can pass options directly to request by overriding the `viaf.requestOptions` object, which is passed directly to request.
 
 ## To Do
 
