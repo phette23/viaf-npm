@@ -31,6 +31,7 @@ viaf.dataResponseTypes = {
     'rdf' : '/rdf.xml',
     'jsonld' : '/viaf.jsonld',
     'rss' : '/rss.xml',
+    'marc' : '/marc21.xml',
     'marc21' : '/marc21.xml',
     'marcxml' : '/marc21.xml',
     'marchtml' : '/marc21.html', // basically same as above, forces an HTML download
@@ -45,6 +46,11 @@ viaf.searchResponseTypes = {
     'rss' : 'application/rss+xml',
     'xml' : 'text/xml',
 };
+
+function isFunc(obj) {
+    return obj && {}.toString.call(obj) === '[object Function]';
+}
+
 // helper function
 viaf.url = function (type) {
     // each time request is made, use viaf.requestOptions
@@ -53,22 +59,43 @@ viaf.url = function (type) {
     return viaf.scheme + '://' + viaf.domain + viaf.stems[type];
 }
 
-viaf.read = function (id, cb) {
-    // needs a trailing slash or it returns 303
-    return viaf.request(viaf.url('read') + id + '/', cb || null);
+viaf.read = function (id, dataType, cb) {
+    var url = viaf.url('read') + id;
+
+    // handle v.read(id, callback) signature
+    if (isFunc(dataType)) {
+        cb = dataType;
+        dataType = viaf.defaultDataType;
+    }
+
+    // normalize string params, e.g. JSON-LD will still end up jsonld
+    dataType = dataType.replace('-','').toLowerCase();
+
+    return viaf.request(url + viaf.dataResponseTypes[dataType], cb || null);
 };
 
-viaf.search = function (query, cb) {
-    return viaf.request(viaf.url('search') + encodeURIComponent(query), cb || null);
+viaf.search = function (query, dataType, cb) {
+    var url = viaf.url('search');
+
+    // handle v.search(id, callback) signature
+    if (isFunc(dataType)) {
+        cb = dataType;
+        dataType = viaf.defaultDataType;
+    }
+
+    return viaf.request(url + encodeURIComponent(query), cb || null);
 };
 
 // for predictability set up an alias
 viaf.srusearch = viaf.search;
 
 viaf.autosuggest = function (query, cb) {
-    return viaf.request(viaf.url('autosuggest') + encodeURIComponent(query), cb || null);
+    var url = viaf.url('autosuggest');
+
+    return viaf.request(url + encodeURIComponent(query), cb || null);
 };
 
 // @todo AuthoritySource read
+// @todo viaf.translate(lccn, getty, etc.) => returns VIAF ID (or full record?)
 
 module.exports = viaf;
