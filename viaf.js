@@ -31,8 +31,10 @@ viaf.dataResponseTypes = {
     'rdf' : '/rdf.xml',
     'jsonld' : '/viaf.jsonld',
     'rss' : '/rss.xml',
+    'marc21' : '/marc21.xml',
     'marcxml' : '/marc21.xml',
     'marchtml' : '/marc21.html', // basically same as above, forces an HTML download
+    'unimarc' : '/unimarc.xml',
     'unimarcxml' : '/unimarc.xml',
     'unimarchtml' : '/unimarc.html' // basically same as above, forces an HTML download
 };
